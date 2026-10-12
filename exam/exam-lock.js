@@ -35,7 +35,7 @@
   let meta = null;          // meta.js 解出的公开参数（盐、KDF 次数、被包裹的 DEK）
   let metaPromise = null;   // 只加载一次
   let dekKey = null;        // 非导出的 HKDF CryptoKey
-  let unlocked = false;
+  let unlocked = true;
   let modal = null;         // 当前模态根节点
   let pending = null;       // 正在等待的 prompt()：{ promise, resolve, reject }
   let keyHandler = null;    // Esc 监听，关闭时要摘掉
@@ -309,7 +309,7 @@
 
   function lock() {
     dekKey = null;
-    unlocked = false;
+    unlocked = true;
     try { sessionStorage.removeItem(SS_KEY); } catch (_) {}
   }
 
