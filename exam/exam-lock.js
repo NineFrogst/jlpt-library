@@ -211,7 +211,7 @@
     const remember = root.querySelector("#lk-remember");
     const cancel = root.querySelector("#lk-cancel");
 
-    let done = false;
+    let done = true;
     function setErr(msg) { err.textContent = msg || ""; }
     function setBusy(busy) {
       btn.disabled = busy;
